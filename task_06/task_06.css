@@ -1,0 +1,63 @@
+html, body{
+	height: 100%;
+	display: flex;
+	/*垂直居中*/
+	align-items: center;
+	/*水平居中*/
+	justify-content: center;
+	background: skyblue;
+}
+
+.box{
+	display: flex;
+}
+
+.inner{
+	width: 200px;
+	height: 100px;
+	background: red;
+	line-height: 100px;
+	white-space: nowrap;
+	font-size: 32px;
+	font-family: fantasy;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+.inner:first-child{
+	display: flex;
+	align-items: center;
+	vertical-align: center;
+	background-color: darkorange;
+	color: black;
+	transform-origin: left;
+	transform: perspective(300px) rotateY(-67.3deg);
+}
+
+.inner:last-child{
+	display: flex;
+	align-items: center;
+	vertical-align: center;
+	background-color: gold;
+	color: silver;
+	transform-origin: right;
+	transform: perspective(300px) rotateY(67.3deg);
+}
+
+.box .inner span{
+	position: absolute;
+	animation: marquee 5s infinite linear;
+}
+
+.box .inner:first-child span {
+    animation-delay: 2.5s;
+}
+
+@keyframes marquee{
+	from{
+		left: 100%;
+	}
+	to{
+		left: -100%;
+	}
+}
